@@ -22,7 +22,7 @@
     </div>
     
     <div>
-        <h2>Selected Stock: <span id="my-stock-display">TODO</span></h1>
+        <h2>Selected Stock: <span id="my-stock-display">TODO</span></h2>
     </div>
     
     <script type="text/javascript">
@@ -36,8 +36,17 @@
 
         var myButton = document.getElementById("my-btn")
 
+        var InputUserName = document.getElementById("my-user-name")
+        var StockSelector = document.getElementById("my-stock-selector") 
+
+        var StockDisplay = document.getElementById("my-stock-display")
+
         function handleClick(){
             console.log("YOU CLICKED ME")
+            console.log("USER NAME", InputUserName.value)
+            console.log("STOCK SYMBOL:", StockSelector.value)
+
+            //
         }
 
         // handleClick()
