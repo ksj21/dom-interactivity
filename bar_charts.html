@@ -44,13 +44,13 @@
             {"genre":"Romantic Comedy", "viewers":121212}
         ] // leave this data as is
 
-        // IMPLEMENTATION - METHOD 1
-
         console.log("BAR DATA", barData)
 
+
+        // IMPLEMENTATION: METHOD 1
         // put genres on x axis, viewers on y axis
-        // x: var genres = ['giraffes', 'orangutans', 'monkeys']
-        // y: var viewers = [20, 14, 23]
+            // x: var genres = ['giraffes', 'orangutans', 'monkeys']
+            // y: var viewers = [20, 14, 23]
 
         var genres = []
         var viewers = []
@@ -62,14 +62,10 @@
         console.log("GENRES", genres)
         console.log("VIEWERS", viewers)
 
-        // modify this example, passing in some aspects of our data structure
 
-        var data = [{x: genres, y: viewers, type: 'bar'}]
-        Plotly.newPlot('bar-chart-container', data)
+        // IMPLEMENTATION: METHOD 2 (MAPPING)
+        // Loop in place using the array's map method to transform the original items in the array
 
-
-        // IMPLEMENTATION - METHOD 2 (MAPPING)
-        
         var genres = barData.map(function(item){
             return item["genre"]
         })
@@ -78,6 +74,21 @@
         })
         console.log("GENRES", genres)
         console.log("VIEWERS", viewers)
+
+
+        // IMPLEMENTATION: METHOD 3 (MAPPING IN-PLACE WITH ONE-LINER ARROW FUNCTION)
+        // One-liner functions using the arrow syntax
+        
+        var genres = barData.map(item => item["genre"])
+        var viewers = barData.map(item => item["viewers"])
+        console.log("GENRES", genres)
+        console.log("VIEWERS", viewers)
+
+
+        // modify this example, passing in some aspects of our data structure
+
+        var data = [{x: genres, y: viewers, type: 'bar'}]
+        Plotly.newPlot('bar-chart-container', data)    
 
     </script>
 
