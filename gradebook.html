@@ -15,6 +15,7 @@ body>
     <div id="gradebook-app">
     </div>
 
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
     <script type="text/javascript">
 
         //
@@ -45,20 +46,25 @@ body>
         console.log("GRADEBOOK", gradebook)
 
         // A) Log the date this data was downloaded (i.e. "2021-06-05")
+        
         console.log("DOWNLOAD DATE:", gradebook["downloadDate"])
         
         // B) Log the number of students in the gradebook (i.e. 10)
+        
         console.log("NUMBER OF STUDENTS:", gradebook["students"].length)
 
         // C) Loop through each student and log their grade, each on a new line
+        
         gradebook["students"].forEach(function(item){
             //console.log(item.finalGrade)
             console.log(item["studentId"], item["finalGrade"])
         })
 
         // D) Log the average grade (i.e. 83.64)
+        
         var grades = []
         var gradeSum = 0
+        
         gradebook["students"].forEach(function(item){
             grades.push(item["finalGrade"]) // append just the final grade to our array
             gradeSum += item["finalGrade"]
@@ -71,6 +77,7 @@ body>
         // E) Log the median grade (i.e. 87.6). HINT: it may be helpful to leverage a third-party library like d3.median()
         // https://github.com/d3/d3-array#median
         // https://github.com/prof-rossetti/internet-technologies/blob/main/notes/javascript/packages/d3.md
+        
         console.log("MEAN", d3.mean(grades))
         console.log("MEDIAN", d3.median(grades))
     
