@@ -19,6 +19,20 @@
 
         console.log("MAKING SOME CHARTS...")
 
+        // EXAMPLE FROM THE DOCS
+        // https://plotly.com/javascript/bar-charts/
+
+        var data = [
+            {
+                x: ['giraffes', 'orangutans', 'monkeys'],
+                y: [20, 14, 23],
+                type: 'bar'
+            }
+        ];
+
+        Plotly.newPlot('myDiv', data);
+
+
         // SETUP
 
         var barData = [
@@ -29,7 +43,7 @@
             {"genre": "Documentary", "viewers": 283105},
             {"genre": "Action", "viewers": 544099},
             {"genre": "Romantic Comedy", "viewers": 121212}
-        ] // leave this data as-is
+        ] // leave this data as is
 
         // IMPLEMENTATION
 
